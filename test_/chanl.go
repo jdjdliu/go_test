@@ -1,5 +1,7 @@
 package main
 
+
+// 扇入 & 扇出
 import (
     "fmt"
     "sync"
