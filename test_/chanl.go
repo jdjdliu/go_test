@@ -1,7 +1,5 @@
 package main
 
-
-// 扇入 & 扇出
 import (
     "fmt"
     "sync"
@@ -69,12 +67,13 @@ func merge(outputsChan ...<-chan int) <-chan int {
     //在`WaitGroup`上调用`Done`来递减计数器
         wg.Done()
     }
-
+	fmt.Println(output)
     //把`output`函数运行为groutines，
     // 启动n个协程
     //其中n等于作为函数参数接收的通道数
     //这里我们在`outputsChan`上使用`for range`循环，因此无需手动告诉`n`
     for _, optChan := range outputsChan {
+		//fmt.Println(_)
         go output(optChan)
     }
 
